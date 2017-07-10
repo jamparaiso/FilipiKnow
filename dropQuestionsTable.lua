@@ -1,0 +1,3 @@
+local sqlite = require ( "sqlite3" )local M = {}local function dropTbl()	local path = system.pathForFile ("filipiKnowDB.sqlite",system.DocumentsDirectory)
+	local db = sqlite.open(path)
+	local sql	sql = "DROP TABLE placeQuestions"	db:exec(sql)		sql = "DROP TABLE peopleQuestions"	db:exec(sql)		sql = "DROP TABLE foodQuestions"	db:exec(sql)		sql = "DROP TABLE eventQuestions"	db:exec(sql)		print ( "question table dropped" )	db:close()endM.dropTbl = dropTbl	return M
